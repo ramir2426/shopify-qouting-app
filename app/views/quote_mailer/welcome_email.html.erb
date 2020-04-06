@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Products for Quote</h1>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Product Title</th>
+          <th scope="col">SKU</th>
+          <th scope="col">Displayed Price</th>
+        </tr>
+      </thead>
+      <tbody>
+        <%@products.each do |product|%>
+          <tr>
+            <td><%= product[1][:title]%></td>
+            <td><%= product[1][:sku]%></td>
+            <td><%= product[1][:price]%></td>
+          </tr>
+        <%end%>
+      </tbody>
+    </table>
+
+    <h3>Customer Information</h3>
+    <p><h5>Name:</h5><%=@customer_info[:name]%></p>
+    <p><h5>Email:</h5><%=@customer_info[:email]%></p>
+    <p><h5>Phone:</h5><%=@customer_info[:phone]%></p>
+    <p><h5>Description:</h5><%=@customer_info[:description]%></p>
+    
+    <p>Thanks for joining and have a great day!</p>
+  </body>
+</html>
